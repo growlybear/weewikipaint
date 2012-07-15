@@ -1,0 +1,20 @@
+{
+  "author": "Michael Allan <michaelallan@optushome.com.au>",
+  "name": "weewikipaint",
+  "description": "James Shore's Test-Driven Javascript project",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/growlybear/weewikipaint.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.3.0",
+    "grunt": "~0.3.11",
+    "grunt-mocha": "~0.1.2"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
