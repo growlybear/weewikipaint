@@ -4,10 +4,11 @@ var Wombat = function(opts) {
     this.name = opts.name || 'Wally';
 
     this.eat = function(food) {
-        if (!food) throw Error('D:');
-
+        if (!food) {
+            throw new Error('D:');
+        }
         return 'nom nom';
-    }
+    };
 
     return this;
 };
