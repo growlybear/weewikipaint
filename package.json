@@ -16,5 +16,8 @@
   "optionalDependencies": {},
   "engines": {
     "node": "*"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
   }
 }

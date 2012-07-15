@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        // pkg: '<json:package.json>',
+        pkg: '<json:package.json>',
         meta: {
             banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
                 '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -74,6 +74,9 @@ module.exports = function (grunt) {
 
     // Default task.
     grunt.registerTask('default', 'lint mocha concat min');
+
+    // Travis CI task.
+    grunt.registerTask('travis', 'lint mocha');
 
     // grunt-mocha
     grunt.loadNpmTasks('grunt-mocha');
