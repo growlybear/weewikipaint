@@ -1,13 +1,17 @@
-describe('Apple', function() {
-    beforeEach(function() {
+/*global Apple */
+
+describe('Apple', function () {
+    'use strict';
+
+    beforeEach( function () {
         this.apple = new Apple();
     });
 
-    afterEach(function() {
+    afterEach( function () {
         delete this.apple;
     });
 
-    it('should go crunch', function() {
-        expect(this.apple).property('sound', 'ringy');
+    it( 'should go crunch', function () {
+        expect( this.apple ).property( 'sound', 'ringy' );
     });
 });

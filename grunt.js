@@ -17,28 +17,34 @@ module.exports = function (grunt) {
             files: [
                 'grunt.js',
                 'spec/example/js/*.js',
-                'spec/example/js/*_spec.js'
+                'spec/nodeunit/test.js',
+                'src/**/*.js'
             ]
         },
 
         qunit: {
-            files: ['test/**/*.html']
+            files: [ 'spec/**/*.html' ]
         },
 
         mocha: {
-            index: ['spec/index.html']
+            index: [ 'spec/index.html' ]
+        },
+
+        // nodeunit tests
+        test: {
+            files: [ 'spec/nodeunit/**/*.js' ]
         },
 
         concat: {
             dist: {
-                src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
+                src: [ '<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>' ],
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
 
         min: {
             dist: {
-                src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
+                src: [ '<banner:meta.banner>', '<config:concat.dist.dest>' ],
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
@@ -117,10 +123,18 @@ module.exports = function (grunt) {
                 white: false
             },
             globals: {
+                // BDD
                 describe: false,
                 it: false,
+                before: false,
+                after: false,
                 beforeEach: false,
-                afterEach: false
+                afterEach: false,
+                expect: false,
+
+                // nodeunit
+                require: false,
+                exports: false
             }
         },
 
@@ -128,11 +142,11 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', 'lint mocha concat min');
+    grunt.registerTask( 'default', 'lint mocha concat min' );
 
     // Travis CI task.
-    grunt.registerTask('travis', 'lint mocha');
+    grunt.registerTask( 'travis', 'lint mocha test' );
 
     // grunt-mocha
-    grunt.loadNpmTasks('grunt-mocha');
+    grunt.loadNpmTasks( 'grunt-mocha' );
 };

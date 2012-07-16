@@ -1,5 +1,5 @@
-var Apple = function(opts) {
-    "use strict";
+var Apple = function ( opts ) {
+    'use strict';
 
     opts = opts || {};
 
