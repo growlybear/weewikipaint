@@ -23,7 +23,7 @@ module.exports = function ( grunt ) {
         },
 
         qunit: {
-            files: [ 'test/qunit/index.html' ]
+            all: [ 'test/qunit/index.html' ]
         },
 
         mocha: {
