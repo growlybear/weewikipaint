@@ -16,23 +16,23 @@ module.exports = function (grunt) {
         lint: {
             files: [
                 'grunt.js',
-                'spec/example/js/*.js',
-                'spec/nodeunit/test.js',
+                'test/mocha/example/**/*.js',
+                'test/nodeunit/*.js',
                 'src/**/*.js'
             ]
         },
 
         qunit: {
-            files: [ 'spec/**/*.html' ]
+            all: [ 'test/qunit/*.html' ]
         },
 
         mocha: {
-            index: [ 'spec/index.html' ]
+            index: [ 'test/mocha/index.html' ]
         },
 
         // nodeunit tests
         test: {
-            files: [ 'spec/nodeunit/**/*.js' ]
+            files: [ 'test/nodeunit/**/*.js' ]
         },
 
         concat: {
@@ -145,7 +145,7 @@ module.exports = function (grunt) {
     grunt.registerTask( 'default', 'lint mocha concat min' );
 
     // Travis CI task.
-    grunt.registerTask( 'travis', 'lint mocha test' );
+    grunt.registerTask( 'travis', 'lint mocha test qunit' );
 
     // grunt-mocha
     grunt.loadNpmTasks( 'grunt-mocha' );
