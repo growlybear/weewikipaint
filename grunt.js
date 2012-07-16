@@ -1,5 +1,5 @@
 /*global module:false*/
-module.exports = function (grunt) {
+module.exports = function ( grunt ) {
     "use strict";
 
     // Project configuration.
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         },
 
         qunit: {
-            all: [ 'test/qunit/*.html' ]
+            all: [ 'test/qunit/index.html' ]
         },
 
         mocha: {
