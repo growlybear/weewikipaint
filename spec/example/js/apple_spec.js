@@ -8,6 +8,6 @@ describe('Apple', function() {
     });
 
     it('should go crunch', function() {
-        expect(this.apple).property('sound', 'crunch');
+        expect(this.apple).property('sound', 'ringy');
     });
 });
