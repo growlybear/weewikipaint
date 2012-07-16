@@ -1,4 +1,6 @@
 var Wombat = function(opts) {
+    "use strict";
+
     opts = opts || {};
 
     this.name = opts.name || 'Wally';
